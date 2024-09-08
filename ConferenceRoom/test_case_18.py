@@ -1,22 +1,18 @@
 import time
+from datetime import datetime, timedelta
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
-import json
-
-# Load configuration data from config.json file
-with open('config.json', 'r') as file:
-    config = json.load(file)
 
 
-def testCase_1():
+def testCase_18():
     # launch browser
     driver = webdriver.Firefox()
     driver.maximize_window()
 
     # step 1: Go to Application page
-    # driver.get("https://muntasir101.github.io/Conference-Room-Booking/")
-    driver.get(config['test_url'])
+    driver.get("https://muntasir101.github.io/Conference-Room-Booking/")
     time.sleep(3)
 
     # step 2:Select Room Type
@@ -26,7 +22,10 @@ def testCase_1():
 
     # Step 3: Select Start Date
     start_date = driver.find_element(By.ID, "check-in-date")
-    start_date.send_keys("2024-09-06")
+
+    current_date = datetime.now()
+    formatted_date_current_date = current_date.strftime('%Y-%m-%d')
+    start_date.send_keys(formatted_date_current_date)
 
     # Step 4: Select Start Time
     start_time = driver.find_element(By.ID, "check-in-time")
@@ -34,7 +33,10 @@ def testCase_1():
 
     # Step 5: Select End Date
     end_date = driver.find_element(By.ID, "check-out-date")
-    end_date.send_keys("2024-09-06")
+
+    future_date = current_date + timedelta(days=3)
+    formated_future_date = future_date.strftime('%Y-%m-%d')
+    end_date.send_keys(formated_future_date)
 
     # Step 6: Select End Time
     end_time = driver.find_element(By.ID, "check-out-time")
@@ -47,27 +49,18 @@ def testCase_1():
     time.sleep(3)
 
     # Verify Actual Cost with Expected Cost
-    expected_result = "ESTIMATED BOOKING COSTS: $100.00 (0 Weeks, 0 Days, 1 Hours)"
+    expected_result = "ESTIMATED BOOKING COSTS: $2500.00 (0 Weeks, 3 Days, 1 Hours)"
 
     actual_result = driver.find_element(By.ID, "result").text
 
     if expected_result == actual_result:
-        print("\nTest Case Passed")
-        with open("test_result.txt", 'a') as file:
-            file.write("\nTest Case 1 Passed.\n")
+        print("Test Case Passed")
     else:
-        print("\nTest Case Failed !!"
+        print("Test Case Failed !!"
               "\n" "Getting Actual Result: " + actual_result,
               "\n" "But Expected Result: " + expected_result)
-
-        with open("test_result.txt", 'a') as file:
-            file.write(
-                f"\nTest Case 1 failed !!\n"
-                f"Getting Actual Result: {actual_result}\n"
-                f"Expected Result: {expected_result}\n"
-            )
 
     driver.close()
 
 
-testCase_1()
+testCase_18()

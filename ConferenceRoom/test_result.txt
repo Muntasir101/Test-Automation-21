@@ -1,0 +1,15 @@
+Test Case 1 Passed. Test Case 1 failed !!
+Getting Actual Result: ESTIMATED BOOKING COSTS: $100.00 (0 Weeks, 0 Days, 1 Hours)
+Expected Result: ESTIMATED BOOKING COSTS: $1000.00 (0 Weeks, 0 Days, 1 Hours)
+
+Test Case 1 failed !!
+Getting Actual Result: ESTIMATED BOOKING COSTS: $100.00 (0 Weeks, 0 Days, 1 Hours)
+Expected Result: ESTIMATED BOOKING COSTS: $1000.00 (0 Weeks, 0 Days, 1 Hours)
+
+
+Test Case 1 Passed.
+
+Test Case 1 failed !!
+Getting Actual Result: ESTIMATED BOOKING COSTS: $100.00 (0 Weeks, 0 Days, 1 Hours)
+Expected Result: ESTIMATED BOOKING COSTS: $1000.00 (0 Weeks, 0 Days, 1 Hours)
+Test Case 1 Passed.
