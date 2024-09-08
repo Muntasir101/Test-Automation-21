@@ -54,11 +54,15 @@ def testCase_18():
     actual_result = driver.find_element(By.ID, "result").text
 
     if expected_result == actual_result:
-        print("Test Case Passed")
+        with open("test_result.txt", 'a') as file:
+            file.write("\nTest Case 18 Passed.\n")
     else:
-        print("Test Case Failed !!"
-              "\n" "Getting Actual Result: " + actual_result,
-              "\n" "But Expected Result: " + expected_result)
+        with open("test_result.txt", 'a') as file:
+            file.write(
+                f"\nTest Case 18 failed !!\n"
+                f"Getting Actual Result: {actual_result}\n"
+                f"Expected Result: {expected_result}\n"
+            )
 
     driver.close()
 
