@@ -12,7 +12,7 @@ with open('TN_Config.json', 'r') as file:
     config = json.load(file)
 
 
-def testCase_valid_1():
+def register_testCase_valid():
     # launch browser
     driver = webdriver.Firefox()
     driver.maximize_window()
@@ -85,7 +85,7 @@ def testCase_valid_1():
     driver.close()
 
 
-def testCase_firstName_2():
+def register_testCase_firstName():
     # launch browser
     driver = webdriver.Firefox()
     driver.maximize_window()
@@ -158,7 +158,7 @@ def testCase_firstName_2():
     driver.close()
 
 
-def testCase_lastName_3():
+def register_testCase_lastName():
     # launch browser
     driver = webdriver.Firefox()
     driver.maximize_window()
@@ -231,4 +231,6 @@ def testCase_lastName_3():
     driver.close()
 
 
-testCase_lastName_3()
+register_testCase_valid()
+register_testCase_firstName()
+register_testCase_lastName()

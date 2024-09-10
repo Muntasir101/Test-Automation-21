@@ -12,3 +12,25 @@ Error Message for First name display.Test Passed.
 Error Message for Last name display.Test Passed.
 
 Test Case Passed. Error Message display for Invalid login.
+
+Test Case Passed.Account Creation Success.
+
+Error Message for First name display.Test Passed.
+
+Error Message for Last name display.Test Passed.
+
+Test Case Passed.Account Creation Success.
+
+Error Message for First name display.Test Passed.
+
+Test Case Passed.Account Creation Success.
+
+Error Message for First name display.Test Passed.
+
+Error Message for Last name display.Test Passed.
+
+Test Case Passed.Account Creation Success.
+
+Error Message for First name display.Test Passed.
+
+Test Case Passed.Account Creation Success.
