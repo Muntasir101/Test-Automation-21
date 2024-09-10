@@ -6,3 +6,9 @@ Test Case Passed. Login Success.
 Test Case Passed.Account Creation Success.
 
 Test Case Passed. Login Success.
+
+Error Message for First name display.Test Passed.
+
+Error Message for Last name display.Test Passed.
+
+Test Case Passed. Error Message display for Invalid login.
