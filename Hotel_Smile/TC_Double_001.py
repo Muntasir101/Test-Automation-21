@@ -1,4 +1,5 @@
 import time
+from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -13,6 +14,7 @@ def test_case_1():
     time.sleep(3)
 
     # Step 2: Select Check-in Date
+
     start_date = driver.find_element(By.ID, "check_in_date")
     start_date.click()
     start_date.clear()
