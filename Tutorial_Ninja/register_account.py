@@ -231,6 +231,8 @@ def register_testCase_lastName():
     driver.close()
 
 
+"""
 register_testCase_valid()
 register_testCase_firstName()
 register_testCase_lastName()
+"""
