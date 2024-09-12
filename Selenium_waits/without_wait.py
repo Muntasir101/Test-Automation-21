@@ -2,8 +2,6 @@ import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
 
 
 def hrm_login():
@@ -15,18 +13,20 @@ def hrm_login():
 
     # step 1: Go to Application page
     driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+    time.sleep(5)
 
-    username = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "[name='username']")))
+    username = driver.find_element(By.CSS_SELECTOR, "[name='username']")
     username.clear()
     username.send_keys("Admin")
+    time.sleep(2)
 
-    password = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "[type='password']")))
+    password = driver.find_element(By.CSS_SELECTOR, "[type='password']")
     password.clear()
     password.send_keys("admin123")
 
-    login_button = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, ".orangehrm-login-button")))
+    login_button = driver.find_element(By.CSS_SELECTOR, ".orangehrm-login-button")
     login_button.click()
+    time.sleep(2)
 
     driver.close()
 
@@ -35,7 +35,7 @@ def hrm_login():
 
     # Calculate total time taken
     execution_time = end_time - start_time
-    print(execution_time)  # 14.589903354644775
+    print(execution_time)  # 25.4701726436615
 
 
 hrm_login()

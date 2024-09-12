@@ -1,12 +1,8 @@
-import time
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
 def hrm_login():
-    start_time = time.time()
-
     # launch browser
     driver = webdriver.Firefox()
     driver.maximize_window()
@@ -29,13 +25,6 @@ def hrm_login():
     login_button.click()
 
     driver.close()
-
-    # Execution End Time
-    end_time = time.time()
-
-    # Calculate total time taken
-    execution_time = end_time - start_time
-    print(execution_time)  # 15.12992548942566
 
 
 hrm_login()
