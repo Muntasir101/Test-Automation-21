@@ -49,5 +49,12 @@ def switch_window():
             print("Child Window Title: " + driver.title)
             # break
 
+    # Execution End Time
+    end_time = time.time()
+
+    # Calculate total time taken
+    execution_time = end_time - start_time
+    print(execution_time)
+
 
 switch_window()
