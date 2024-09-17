@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+    <testsuite name="pytest" errors="0"
+               failures="0" skipped="1" tests="4"
+               time="0.158" timestamp="2024-09-17T20:22:05.789575+06:00"
+               hostname="Muntasir">
+        <testcase classname="PyTest-Concepts.test_login"
+                  name="test_case1_valid" time="0.098" />
+        <testcase classname="PyTest-Concepts.test_login"
+                  name="test_case2_invalid" time="0.001">
+            <skipped type="pytest.skip" message="We don't want to run this test">
+                E:\PnT_Online_21\Projects\TestAutomation21\PyTest-Concepts\test_login.py:10: We don't want to run this test</skipped>
+        </testcase>
+        <testcase classname="PyTest-Concepts.test_login" name="test_case3_invalid" time="0.001" />
+        <testcase classname="PyTest-Concepts.test_login" name="test_case4_valid" time="0.001" />
+    </testsuite>
+</testsuites>
