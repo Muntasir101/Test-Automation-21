@@ -11,8 +11,7 @@ from Framework.common.log_config import setup_logging
 config = load_config()
 
 # Load logging configuration
-logging.basicConfig(filename=os.path.join(os.getcwd(), 'Framework', 'Log', 'test_log.log'), level=logging.INFO,
-                    format='%(asctime)s - %(levelname)s - %(message)s')
+setup_logging("test_log.log")
 
 
 def test_valid_login(setup_driver):
@@ -24,16 +23,33 @@ def test_valid_login(setup_driver):
 
     login_page = LoginPage(driver)
 
-    login_page.enter_username("Admin")
+    login_page.enter_email("mail123@gmail.com")
     logging.info("Enter Username...")
 
-    login_page.enter_password("admin123")
+    login_page.enter_password("123456")
     logging.info("Enter Password...")
 
     login_page.click_login()
     logging.info("Click Login button...")
 
-    save_screenshot(driver, 'login2.png')
-    logging.info("Capture Screenshot...")
+    # Verification Login Success
+    expected_title = "My Account"
+
+    actual_title = driver.title
+
+    if expected_title == actual_title:
+        with open(os.path.join(os.getcwd(), 'Framework', 'Report', 'TN_test_result.txt'), 'a') as file:
+            file.write("\nTest Case Passed. Login Success.\n")
+    else:
+        with open(os.path.join(os.getcwd(), 'Framework', 'Report', 'TN_test_result.txt'), 'a') as file:
+            file.write(
+                f"\nTest Case failed !!\n"
+                f"Getting Actual Result: {actual_title}\n"
+                f"Expected Result: {expected_title}\n"
+
+            )
+
+        save_screenshot(driver, 'login_failed.png')
+        logging.info("Capture Screenshot...")
 
     logging.info("Test Complete...")

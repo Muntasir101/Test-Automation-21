@@ -13,9 +13,9 @@ class LoginPage:
         self.password_input = (By.CSS_SELECTOR, "#input-password")
         self.login_button = (By.CSS_SELECTOR, "form[method='post'] > input[value='Login']")
 
-    def enter_username(self, username):
+    def enter_email(self, email):
         username_field = self.wait.until((EC.visibility_of_element_located(self.email_input)))
-        username_field.send_keys(username)
+        username_field.send_keys(email)
 
     def enter_password(self, password):
         password_field = self.wait.until((EC.visibility_of_element_located(self.password_input)))
