@@ -1,5 +1,7 @@
 import json
+import os
 
+from Framework.common.generate_screenshot import save_screenshot
 from Framework.pages.login_page import LoginPage
 
 # Load configuration data from config.json file
@@ -18,4 +20,4 @@ def test_valid_login(setup_driver):
     login_page.enter_password("admin123")
     login_page.click_login()
 
-    driver.save_screenshot("Screenshots//Test_Complete.png")
+    save_screenshot(driver, 'login2.png')
