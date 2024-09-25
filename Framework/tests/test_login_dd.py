@@ -16,6 +16,7 @@ def load_test_data(file_path):
 
 def test_login_dd_tn(setup_driver):
     driver = setup_driver
+    logging.info("Test Start...")
 
     data_file = os.path.join(os.getcwd(), 'Framework', 'Data', "login_data.xlsx")
     test_data = load_test_data(data_file)
@@ -27,9 +28,15 @@ def test_login_dd_tn(setup_driver):
         driver.get(config['login_page'])
 
         login_page = LoginPage(driver)
+        logging.info("Go to Login Page...")
 
         login_page.enter_email(email)
+        logging.info(f"Enter Email: {email}")
 
         login_page.enter_password(password)
+        logging.info(f"Enter Password: {password}")
 
         login_page.click_login()
+        logging.info("Click Login Button...")
+
+        logging.info("Test Completed.")

@@ -5,13 +5,10 @@ import os
 from Framework.common.generate_screenshot import save_screenshot
 from Framework.pages.login_page import LoginPage
 from Framework.common.configure_config import load_config
-from Framework.common.log_config import setup_logging
+
 
 # Load configuration data from config.json file
 config = load_config()
-
-# Load logging configuration
-setup_logging("test_log.log")
 
 
 def test_valid_login(setup_driver):
@@ -24,7 +21,7 @@ def test_valid_login(setup_driver):
     login_page = LoginPage(driver)
 
     login_page.enter_email("mail123@gmail.com")
-    logging.info("Enter Username...")
+    logging.info("Enter Email...")
 
     login_page.enter_password("123456")
     logging.info("Enter Password...")
