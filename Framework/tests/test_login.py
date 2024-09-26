@@ -37,14 +37,15 @@ def test_valid_login(setup_driver):
     if expected_title == actual_title:
         with open(os.path.join(os.getcwd(), 'Framework', 'Report', 'TN_test_result.txt'), 'a') as file:
             file.write("\nTest Case Passed. Login Success.\n")
+            logging.info("Test Case Passed. Login Success")
     else:
         with open(os.path.join(os.getcwd(), 'Framework', 'Report', 'TN_test_result.txt'), 'a') as file:
             file.write(
                 f"\nTest Case failed !!\n"
                 f"Getting Actual Result: {actual_title}\n"
                 f"Expected Result: {expected_title}\n"
-
             )
+            logging.info("Test Case Failed !!\n")
 
         save_screenshot(driver, 'login_failed.png')
         logging.info("Capture Screenshot...")
